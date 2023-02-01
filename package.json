@@ -1,8 +1,8 @@
 {
-  "name": "emoji-search",
+  "name": "no-name",
   "version": "0.1.0",
   "license": "MIT",
-  "homepage": "http://ahfarmer.github.io/emoji-search",
+  
   "devDependencies": {
     "@testing-library/jest-dom": "5",
     "@testing-library/react": "12",

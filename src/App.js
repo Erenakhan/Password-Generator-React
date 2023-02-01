@@ -1,30 +1,37 @@
-import React, { PureComponent } from "react";
-import Header from "./Header";
-import SearchInput from "./SearchInput";
-import EmojiResults from "./EmojiResults";
-import filterEmoji from "./filterEmoji";
+import React from 'react'
+import { useState } from 'react'
+import './App.css'
 
-export default class App extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filteredEmoji: filterEmoji("", 20)
-    };
+function App() {
+  const [minVal,setMinVal] = useState()
+  const [maxVal,setMaxVal] = useState()
+  const [ranVal,setRanVal] = useState()
+  const generate=() =>{
+    setRanVal(Math.floor(Math.random()*(maxVal-minVal+1)+minVal))
   }
+  return (
+    <>
+    
 
-  handleSearchChange = event => {
-    this.setState({
-      filteredEmoji: filterEmoji(event.target.value, 20)
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <Header />
-        <SearchInput textChange={this.handleSearchChange} />
-        <EmojiResults emojiData={this.state.filteredEmoji} />
+    <h1>Number Generator</h1>
+    <div className="hero">
+      <div className="rand">
+        <div>Random Number:<span>{ranVal}</span></div>
       </div>
-    );
-  }
+      <div className="min_max">
+        <p>Min:</p>
+        <input type="number" value={minVal} 
+        onChange={e=>setMinVal(+e.target.value)}></input>
+        <br></br>
+        <p>Max:</p>
+        <input type="number" value={maxVal} 
+        onChange={e=>setMaxVal(+e.target.value)}></input>
+      </div>
+      <div className="button">
+        <button onClick={generate}>Generate Number</button></div>  
+    </div>
+    </>
+  )
 }
+
+export default App
