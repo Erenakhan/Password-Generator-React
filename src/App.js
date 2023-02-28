@@ -5,7 +5,7 @@ import './App.css'
 
 
 function App() {
-  const [value, setValue,] = useState(2)
+  const [value, setValue,] = useState(6)
   const [password, setPassword] = useState("");
 
   const  genPassword = () => {
