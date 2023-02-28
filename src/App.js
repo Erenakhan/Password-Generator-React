@@ -32,7 +32,7 @@ function App() {
     <input className='result' value={password}/>
         
         <div className='length'>Password Length:<span>{value}</span></div>
-      <input type='range' className='range' max={14} value={value} onChange={((e)=>setValue(e.target.value))} />
+      <input type='range' className='range' max={16} min={4} value={value} onChange={((e)=>setValue(e.target.value))} />
       <br></br>
   <button className='generate' onClick={handleClick}>Generate</button>
   </div>
